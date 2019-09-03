@@ -22,8 +22,8 @@ Open XML 采用特定标记语言（即 WordprocessingML、SpreadsheetML 和 Pre
 1. PresentationML 文档<br/>
 文档结构由包含 <sldMaster>（幻灯片母版）、<sldLayout>（幻灯片版式）、<sld >（幻灯片）<presentation>（演示文稿）元素和引用演示文稿中的幻灯片的 <theme>（主题）元素组成。 （主题元素是 DrawingMLTheme 部件的根元素。）这些元素是有效的演示文稿文档至少要包含的元素。
 2. SpreadsheetML 文档<br/>文档结构由包含 <sheets> 的 <workbook> 元素和在工作簿中引用工作表的<sheet>元素组成。将为每张工作表创建单独的XML文件。这些元素是有效电子表格文档所需的最小元素。此外，电子表格文档可能包含<table>、<chartsheet>、<pivotTableDefinition>或其他与电子表格相关的元素。
-3. WordProcessingML 文档<br/>基本文档结构由 <document> 和 <body> 元素组成，后跟一个或多个块级元素，例如代表 paragraph 的\<p>。paragraph包含一个或多个<r>元素。<r>代表run，它是具有一组共同属性（如格式设置）的文本区域。run包含一个或多个 <t> 元素。 <t> 元素包含文本范围。
-
+3. WordProcessingML 文档<br/>基本文档结构由 \<document> 和\<body> 元素组成，后跟一个或多个块级元素，例如代表 paragraph 的\<p>。paragraph包含一个或多个\<r>元素。<r>代表run，它是具有一组共同属性（如格式设置）的文本区域。run包含一个或多个 \<t> 元素。 \<t> 元素包含文本范围。
+<br/>
 前部分只是对Office2007文档进行扫盲，此文档仅仅以SpreadsheetML文档相关哈。
 ### poi配合ooxml操作Excel文档
 #### maven依赖
@@ -140,7 +140,7 @@ just eww!
 
 ###### 锚点类
 锚点主要有两大类，实现了ChildAnchor接口，ChildAnchor主要规定了每个锚点类的位置坐标等。
-```
+```mermaid
   graph LR
   i1>ChildAnchor] --> ab1(XSSFAnchor)
   ab1 --> XSSFClientAnchor
